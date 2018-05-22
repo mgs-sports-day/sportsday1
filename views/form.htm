@@ -7,6 +7,7 @@
 </nav>
 
 <h3>{{ formName }}</h3>
+<p>To view more information on mobile devices, please scroll to the left and right, over the table.</p>
 
 <ul class="nav mb-3 nav-tabs" role="tablist">
   <li class="nav-item">
@@ -20,63 +21,67 @@
 <div class="tab-content">
   <div class="tab-pane fade show active" id="fmi-stats">
     <h3>Statistics</h3>
-    <table class="table table-striped">
-      <tbody>
-        <tr>
-          <td widtd="20%">Total points</td>
-          <td><strong>{{ form[0].c[2].f }}</strong></td>
-        </tr>
-        <tr>
-          <td widtd="20%">School position</td>
-          <td ng-class="{'c-gold':form[0].c[4].f==1,'c-silver':form[0].c[4].f==2,'c-bronze':form[0].c[4].f==3}"><strong>{{ form[0].c[4].f }}</strong></td>
-        </tr>
-        <tr>
-          <td widtd="20%">Year position</td>
-          <td ng-class="{'c-gold':form[0].c[3].f==1,'c-silver':form[0].c[3].f==2,'c-bronze':form[0].c[3].f==3}"><strong>{{ form[0].c[3].f }}</strong></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <tbody>
+          <tr>
+            <td widtd="20%">Total points</td>
+            <td><strong>{{ form[0].c[2].f }}</strong></td>
+          </tr>
+          <tr>
+            <td widtd="20%">School position</td>
+            <td ng-class="{'c-gold':form[0].c[4].f==1,'c-silver':form[0].c[4].f==2,'c-bronze':form[0].c[4].f==3}"><strong>{{ form[0].c[4].f }}</strong></td>
+          </tr>
+          <tr>
+            <td widtd="20%">Year position</td>
+            <td ng-class="{'c-gold':form[0].c[3].f==1,'c-silver':form[0].c[3].f==2,'c-bronze':form[0].c[3].f==3}"><strong>{{ form[0].c[3].f }}</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
   <div class="tab-pane fade" id="fmi-breakdown">
     <h3>Activities breakdown</h3>
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th width="10%" rowspan="2">Activity</th>
-          <th width="27%" colspan="3">Competitor A</th>
-          <th width="27%" colspan="3">Competitor B</th>
-          <th width="27%" colspan="3">Competitor C</th>
-          <th width="10%" rowspan="2">Points</th>
-        </tr>
-        <tr>
-          <th width="9%">Name</th>
-          <th width="9%">Position</th>
-          <th width="9%">Points</th>
-          <th width="9%">Name</th>
-          <th width="9%">Position</th>
-          <th width="9%">Points</th>
-          <th width="9%">Name</th>
-          <th width="9%">Position</th>
-          <th width="9%">Points</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr ng-repeat="activity in formActivities">
-          <td><a ng-href="#!/a/{{ activity.sem_name }}">{{ activity.name }}</a></td>
-          <td>{{ activity.aname }}</td>
-          <td ng-class="{'c-gold':activity.apos==1,'c-silver':activity.apos==2,'c-bronze':activity.apos==3}">{{ activity.apos }}</td>
-          <td>{{ activity.apts }}</td>
-          <td>{{ activity.bname }}</td>
-          <td ng-class="{'c-gold':activity.bpos==1,'c-silver':activity.bpos==2,'c-bronze':activity.bpos==3}">{{ activity.bpos }}</td>
-          <td>{{ activity.bpts }}</td>
-          <td>{{ activity.cname }}</td>
-          <td ng-class="{'c-gold':activity.cpos==1,'c-silver':activity.cpos==2,'c-bronze':activity.cpos==3}">{{ activity.cpos }}</td>
-          <td>{{ activity.cpts }}</td>
-          <td>{{ activity.ptstotal }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th width="10%" rowspan="2">Activity</th>
+            <th width="27%" colspan="3">Competitor A</th>
+            <th width="27%" colspan="3">Competitor B</th>
+            <th width="27%" colspan="3">Competitor C</th>
+            <th width="10%" rowspan="2">Points</th>
+          </tr>
+          <tr>
+            <th width="9%">Name</th>
+            <th width="9%">Position</th>
+            <th width="9%">Points</th>
+            <th width="9%">Name</th>
+            <th width="9%">Position</th>
+            <th width="9%">Points</th>
+            <th width="9%">Name</th>
+            <th width="9%">Position</th>
+            <th width="9%">Points</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="activity in formActivities">
+            <td><a ng-href="#!/a/{{ activity.sem_name }}">{{ activity.name }}</a></td>
+            <td>{{ activity.aname }}</td>
+            <td ng-class="{'c-gold':activity.apos==1,'c-silver':activity.apos==2,'c-bronze':activity.apos==3}">{{ activity.apos }}</td>
+            <td>{{ activity.apts }}</td>
+            <td>{{ activity.bname }}</td>
+            <td ng-class="{'c-gold':activity.bpos==1,'c-silver':activity.bpos==2,'c-bronze':activity.bpos==3}">{{ activity.bpos }}</td>
+            <td>{{ activity.bpts }}</td>
+            <td>{{ activity.cname }}</td>
+            <td ng-class="{'c-gold':activity.cpos==1,'c-silver':activity.cpos==2,'c-bronze':activity.cpos==3}">{{ activity.cpos }}</td>
+            <td>{{ activity.cpts }}</td>
+            <td>{{ activity.ptstotal }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
 </div> <!-- /tab content -->

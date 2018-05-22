@@ -7,6 +7,7 @@
 <h1>Welcome to the MGS Sports Day 2018 website!</h1>
 
 <p>This page shows all forms, across the entire school in <strong>rank</strong> order. For more details, please visit the individual <a href="#!/forms">forms</a> and <a href="#!/activities">activities</a> pages.<br>On this page, forms are listed in rank order. Forms with 0 points are not ranked, and are listed in alphabetical order.</p>
+<p>Archived results for 2017 may be viewed in a new tab, by clicking this link: <a href="https://goo.gl/fp6pTK" target="_blank">2017 results</a>.
 
 <ul class="nav mb-3 nav-tabs" role="tablist">
   <li class="nav-item">
@@ -19,44 +20,48 @@
 
 <div class="tab-content">
   <div class="tab-pane fade show active" id="v-top">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th width="15%">School position</th>
-          <th width="35%">Form</th>
-          <th width="35%">Total points</th>
-          <th width="15%">View</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr ng-repeat="score in topfive" ng-class="{'c-gold':score.c[3].f==1,'c-silver':score.c[3].f==2,'c-bronze':score.c[3].f==3}">
-          <td>{{ score.c[3].f }}</td>
-          <td>{{ score.c[0].v + score.c[1].v }}</td>
-          <td>{{ score.c[2].f }}</td>
-          <td><a ng-href="#!/f/{{ (score.c[0].v + score.c[1].v).replace('/','SLASH') }}" class="btn btn-outline-dark">View form</a></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th width="15%">School position</th>
+            <th width="35%">Form</th>
+            <th width="35%">Total points</th>
+            <th width="15%">View</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="score in topfive" ng-class="{'c-gold':score.c[3].f==1,'c-silver':score.c[3].f==2,'c-bronze':score.c[3].f==3}">
+            <td>{{ score.c[3].f }}</td>
+            <td>{{ score.c[0].v + score.c[1].v }}</td>
+            <td>{{ score.c[2].f }}</td>
+            <td><a ng-href="#!/f/{{ (score.c[0].v + score.c[1].v).replace('/','SLASH') }}" class="btn btn-outline-dark">View form</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
   <div class="tab-pane fade" id="v-all">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th width="15%">School position</th>
-          <th width="35%">Form</th>
-          <th width="35%">Total points</th>
-          <th width="15%">View</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr ng-repeat="score in all" ng-class="{'c-gold':score.c[3].f==1,'c-silver':score.c[3].f==2,'c-bronze':score.c[3].f==3}">
-          <td>{{ score.c[3].f }}</td>
-          <td>{{ score.c[0].v + score.c[1].v }}</td>
-          <td>{{ score.c[2].f }}</td>
-          <td><a ng-href="#!/f/{{ (score.c[0].v + score.c[1].v).replace('/','SLASH') }}" class="btn btn-outline-dark">View form</a></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th width="15%">School position</th>
+            <th width="35%">Form</th>
+            <th width="35%">Total points</th>
+            <th width="15%">View</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="score in all" ng-class="{'c-gold':score.c[3].f==1,'c-silver':score.c[3].f==2,'c-bronze':score.c[3].f==3}">
+            <td>{{ score.c[3].f }}</td>
+            <td>{{ score.c[0].v + score.c[1].v }}</td>
+            <td>{{ score.c[2].f }}</td>
+            <td><a ng-href="#!/f/{{ (score.c[0].v + score.c[1].v).replace('/','SLASH') }}" class="btn btn-outline-dark">View form</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

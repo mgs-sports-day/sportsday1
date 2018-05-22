@@ -7,7 +7,7 @@
 
 <h3><i class="fas fa-users"></i> All forms</h3>
 
-<p>This page shows forms in <strong>alphabetical</strong> order. Their ranks in their year group and the whole school are listed. For forms with 0 points, no rank is shown. For more details, please visit the individual linked form pages.</p>
+<p>This page shows forms in <strong>alphabetical</strong> order. Their ranks in their year group and the whole school are listed. For forms with 0 points, no rank is shown. For more details, please visit the individual linked form pages.<br> To view more information on mobile devices, please scroll to the left and right, over the table.</p>
 
 <ul class="nav mb-3 nav-tabs" role="tablist">
   <li class="nav-item">
@@ -30,108 +30,118 @@
 <div class="tab-content">
 
   <div class="tab-pane fade show active" id="fm-all">
-    <table class="table">
-      <thead>
-        <th width="25%">Form</th>
-        <th width="15%">School position</th>
-        <th width="15%">Year group position</th>
-        <th width="25%">Total points</th>
-        <th width="10%">View</th>
-      </thead>
-      <tbody>
-        <tr ng-repeat="form in forms">
-          <td><strong>{{ form.c[0].v + form.c[1].v }}</strong></td>
-          <td ng-class="{'c-gold':form.c[3].f==1,'c-silver':form.c[3].f==2,'c-bronze':form.c[3].f==3}">{{ form.c[3].f }}</td>
-          <td ng-class="{'c-gold':form.c[4].f==1,'c-silver':form.c[4].f==2,'c-bronze':form.c[4].f==3}">{{ form.c[4].f }}</td>
-          <td>{{ form.c[2].f }}</td>
-          <td><a ng-href="#!/f/{{ form.c[5].v.replace('/','SLASH') }}" class="btn btn-outline-dark">View form</a></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <th width="25%">Form</th>
+          <th width="15%">School position</th>
+          <th width="15%">Year group position</th>
+          <th width="25%">Total points</th>
+          <th width="10%">View</th>
+        </thead>
+        <tbody>
+          <tr ng-repeat="form in forms">
+            <td><strong>{{ form.c[0].v + form.c[1].v }}</strong></td>
+            <td ng-class="{'c-gold':form.c[3].f==1,'c-silver':form.c[3].f==2,'c-bronze':form.c[3].f==3}">{{ form.c[3].f }}</td>
+            <td ng-class="{'c-gold':form.c[4].f==1,'c-silver':form.c[4].f==2,'c-bronze':form.c[4].f==3}">{{ form.c[4].f }}</td>
+            <td>{{ form.c[2].f }}</td>
+            <td><a ng-href="#!/f/{{ form.c[5].v.replace('/','SLASH') }}" class="btn btn-outline-dark">View form</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
   <div class="tab-pane fade" id="fm-7">
-    <table class="table">
-      <thead>
-        <th width="25%">Form</th>
-        <th width="15%">School position</th>
-        <th width="15%">Year group position</th>
-        <th width="25%">Total points</th>
-        <th width="10%">View</th>
-      </thead>
-      <tbody>
-        <tr ng-repeat="form in year7">
-          <td><strong>{{ form.c[0].v + form.c[1].v }}</strong></td>
-          <td ng-class="{'c-gold':form.c[3].f==1,'c-silver':form.c[3].f==2,'c-bronze':form.c[3].f==3}">{{ form.c[3].f }}</td>
-          <td ng-class="{'c-gold':form.c[4].f==1,'c-silver':form.c[4].f==2,'c-bronze':form.c[4].f==3}">{{ form.c[4].f }}</td>
-          <td>{{ form.c[2].f }}</td>
-          <td><a ng-href="#!/f/{{ form.c[5].v.replace('/','SLASH') }}" class="btn btn-outline-dark">View form</a></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <th width="25%">Form</th>
+          <th width="15%">School position</th>
+          <th width="15%">Year group position</th>
+          <th width="25%">Total points</th>
+          <th width="10%">View</th>
+        </thead>
+        <tbody>
+          <tr ng-repeat="form in year7">
+            <td><strong>{{ form.c[0].v + form.c[1].v }}</strong></td>
+            <td ng-class="{'c-gold':form.c[3].f==1,'c-silver':form.c[3].f==2,'c-bronze':form.c[3].f==3}">{{ form.c[3].f }}</td>
+            <td ng-class="{'c-gold':form.c[4].f==1,'c-silver':form.c[4].f==2,'c-bronze':form.c[4].f==3}">{{ form.c[4].f }}</td>
+            <td>{{ form.c[2].f }}</td>
+            <td><a ng-href="#!/f/{{ form.c[5].v.replace('/','SLASH') }}" class="btn btn-outline-dark">View form</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
   <div class="tab-pane fade" id="fm-8">
-    <table class="table">
-      <thead>
-        <th width="25%">Form</th>
-        <th width="15%">School position</th>
-        <th width="15%">Year group position</th>
-        <th width="25%">Total points</th>
-        <th width="10%">View</th>
-      </thead>
-      <tbody>
-        <tr ng-repeat="form in year8">
-          <td><strong>{{ form.c[0].v + form.c[1].v }}</strong></td>
-          <td ng-class="{'c-gold':form.c[3].f==1,'c-silver':form.c[3].f==2,'c-bronze':form.c[3].f==3}">{{ form.c[3].f }}</td>
-          <td ng-class="{'c-gold':form.c[4].f==1,'c-silver':form.c[4].f==2,'c-bronze':form.c[4].f==3}">{{ form.c[4].f }}</td>
-          <td>{{ form.c[2].f }}</td>
-          <td><a ng-href="#!/f/{{ form.c[5].v.replace('/','SLASH') }}" class="btn btn-outline-dark">View form</a></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <th width="25%">Form</th>
+          <th width="15%">School position</th>
+          <th width="15%">Year group position</th>
+          <th width="25%">Total points</th>
+          <th width="10%">View</th>
+        </thead>
+        <tbody>
+          <tr ng-repeat="form in year8">
+            <td><strong>{{ form.c[0].v + form.c[1].v }}</strong></td>
+            <td ng-class="{'c-gold':form.c[3].f==1,'c-silver':form.c[3].f==2,'c-bronze':form.c[3].f==3}">{{ form.c[3].f }}</td>
+            <td ng-class="{'c-gold':form.c[4].f==1,'c-silver':form.c[4].f==2,'c-bronze':form.c[4].f==3}">{{ form.c[4].f }}</td>
+            <td>{{ form.c[2].f }}</td>
+            <td><a ng-href="#!/f/{{ form.c[5].v.replace('/','SLASH') }}" class="btn btn-outline-dark">View form</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
   <div class="tab-pane fade" id="fm-9">
-    <table class="table">
-      <thead>
-        <th width="25%">Form</th>
-        <th width="15%">School position</th>
-        <th width="15%">Year group position</th>
-        <th width="25%">Total points</th>
-        <th width="10%">View</th>
-      </thead>
-      <tbody>
-        <tr ng-repeat="form in year9">
-          <td><strong>{{ form.c[0].v + form.c[1].v }}</strong></td>
-          <td ng-class="{'c-gold':form.c[3].f==1,'c-silver':form.c[3].f==2,'c-bronze':form.c[3].f==3}">{{ form.c[3].f }}</td>
-          <td ng-class="{'c-gold':form.c[4].f==1,'c-silver':form.c[4].f==2,'c-bronze':form.c[4].f==3}">{{ form.c[4].f }}</td>
-          <td>{{ form.c[2].f }}</td>
-          <td><a ng-href="#!/f/{{ form.c[5].v.replace('/','SLASH') }}" class="btn btn-outline-dark">View form</a></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <th width="25%">Form</th>
+          <th width="15%">School position</th>
+          <th width="15%">Year group position</th>
+          <th width="25%">Total points</th>
+          <th width="10%">View</th>
+        </thead>
+        <tbody>
+          <tr ng-repeat="form in year9">
+            <td><strong>{{ form.c[0].v + form.c[1].v }}</strong></td>
+            <td ng-class="{'c-gold':form.c[3].f==1,'c-silver':form.c[3].f==2,'c-bronze':form.c[3].f==3}">{{ form.c[3].f }}</td>
+            <td ng-class="{'c-gold':form.c[4].f==1,'c-silver':form.c[4].f==2,'c-bronze':form.c[4].f==3}">{{ form.c[4].f }}</td>
+            <td>{{ form.c[2].f }}</td>
+            <td><a ng-href="#!/f/{{ form.c[5].v.replace('/','SLASH') }}" class="btn btn-outline-dark">View form</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
   <div class="tab-pane fade" id="fm-10">
-    <table class="table">
-      <thead>
-        <th width="25%">Form</th>
-        <th width="15%">School position</th>
-        <th width="15%">Year group position</th>
-        <th width="25%">Total points</th>
-        <th width="10%">View</th>
-      </thead>
-      <tbody>
-        <tr ng-repeat="form in year10">
-          <td><strong>{{ form.c[0].v + form.c[1].v }}</strong></td>
-          <td ng-class="{'c-gold':form.c[3].f==1,'c-silver':form.c[3].f==2,'c-bronze':form.c[3].f==3}">{{ form.c[3].f }}</td>
-          <td ng-class="{'c-gold':form.c[4].f==1,'c-silver':form.c[4].f==2,'c-bronze':form.c[4].f==3}">{{ form.c[4].f }}</td>
-          <td>{{ form.c[2].f }}</td>
-          <td><a ng-href="#!/f/{{ form.c[5].v.replace('/','SLASH') }}" class="btn btn-outline-dark">View form</a></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <th width="25%">Form</th>
+          <th width="15%">School position</th>
+          <th width="15%">Year group position</th>
+          <th width="25%">Total points</th>
+          <th width="10%">View</th>
+        </thead>
+        <tbody>
+          <tr ng-repeat="form in year10">
+            <td><strong>{{ form.c[0].v + form.c[1].v }}</strong></td>
+            <td ng-class="{'c-gold':form.c[3].f==1,'c-silver':form.c[3].f==2,'c-bronze':form.c[3].f==3}">{{ form.c[3].f }}</td>
+            <td ng-class="{'c-gold':form.c[4].f==1,'c-silver':form.c[4].f==2,'c-bronze':form.c[4].f==3}">{{ form.c[4].f }}</td>
+            <td>{{ form.c[2].f }}</td>
+            <td><a ng-href="#!/f/{{ form.c[5].v.replace('/','SLASH') }}" class="btn btn-outline-dark">View form</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
 </div> <!-- /tab content -->
