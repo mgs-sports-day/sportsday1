@@ -15,7 +15,7 @@
     <meta name="description" content="View results, events, and competitors for the Manchester Grammar School Senior Sports Day 2018 - all in real time!">
   </head>
 
-  <body ng-app="sdApp">
+  <body ng-app="sdApp" ng-controller="global">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-3">
       <a class="navbar-brand" href="#!">
         <img src="lib/img/mgs_white_logo_1066x631px.png" alt="MGS Logo" style="width:60px;">
@@ -52,7 +52,12 @@
     <div class="container">
       <div class="alert alert-danger"><i class="fas fa-exclamation-triangle"></i> <strong>Warning!</strong> This site is currently using testing data.</div>
       <div ng-controller="timer" class="alert alert-secondary">
-        Data reloading in {{ time }} second{{ plural }}.
+        <div ng-if="timing">
+          Data reloading in {{ time }} second{{ plural }}.
+        </div>
+        <div ng-if="!timing">
+          Auto reloading paused.
+        </div>
       </div> <!-- Timer is loaded here -->
       <div ng-view></div> <!-- Views are loaded here -->
       <hr>
