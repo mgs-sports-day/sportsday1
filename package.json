@@ -1,0 +1,22 @@
+{
+  "name": "sportsday",
+  "version": "1.0.0",
+  "description": "*This site is currently stable, but is using testing data.*",
+  "main": " ",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "protractor protractor/conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tti0/sportsday.git"
+  },
+  "author": "Theodore Tucker & Pal Kerecsenyi",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/tti0/sportsday/issues"
+  },
+  "homepage": "https://github.com/tti0/sportsday#readme"
+}

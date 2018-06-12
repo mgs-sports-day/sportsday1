@@ -31,11 +31,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="score in topfive" ng-class="{'c-gold':score.c[3].f==1,'c-silver':score.c[3].f==2,'c-bronze':score.c[3].f==3}">
+          <tr ng-repeat="score in topfive" ng-class="{'c-gold':score.c[3].f==1,'c-silver':score.c[3].f==2,'c-bronze':score.c[3].f==3}" class="sd-test-top5">
             <td>{{ score.c[3].f }}</td>
-            <td>{{ score.c[0].v + score.c[1].v }}</td>
+            <td class="sd-test-top5Form">{{ score.c[0].v + score.c[1].v }}</td>
             <td>{{ score.c[2].f }}</td>
-            <td><a ng-href="#!/f/{{ (score.c[0].v + score.c[1].v).replace('/','SLASH') }}" class="btn btn-outline-dark">View form</a></td>
+            <td><a ng-href="#!/f/{{ (score.c[0].v + score.c[1].v).replace('/','SLASH') }}" class="btn btn-outline-dark sd-test-top5FormButton">View form</a></td>
           </tr>
         </tbody>
       </table>
@@ -54,7 +54,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="score in all" ng-class="{'c-gold':score.c[3].f==1,'c-silver':score.c[3].f==2,'c-bronze':score.c[3].f==3}">
+          <tr ng-repeat="score in all" ng-class="{'c-gold':score.c[3].f==1,'c-silver':score.c[3].f==2,'c-bronze':score.c[3].f==3}" class="sd-test-topAll">
             <td>{{ score.c[3].f }}</td>
             <td>{{ score.c[0].v + score.c[1].v }}</td>
             <td>{{ score.c[2].f }}</td>
