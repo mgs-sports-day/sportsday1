@@ -7,12 +7,15 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Loading bar styles -->
     <link href="lib/css/angular-loading-bar.min.css" rel="stylesheet">
+    <!-- Cookie Consent 2 styles -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css">
     <!-- Custom styles -->
     <link href="lib/css/colours.css" rel="stylesheet">
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
     <title>MGS Sports Day 2018</title>
-    <meta name="description" content="View results, events, and competitors for the Manchester Grammar School Senior Sports Day 2018 - all in real time!">
+    <meta name="description" content="View results, events, and competitors for the Manchester Grammar School Senior Sports Day 2018 - all in real time!"/>
+    <meta name="theme-color" content="#007bff"/>
   </head>
 
   <body ng-app="sdApp" ng-controller="global">
@@ -50,13 +53,13 @@
     </nav>
 
     <div class="container">
-      <div class="alert alert-danger"><i class="fas fa-exclamation-triangle"></i> <strong>Warning!</strong> This site is currently using testing data.</div>
+      <!--<div class="alert alert-danger"><i class="fas fa-exclamation-triangle"></i> <strong>Warning!</strong> This site is currently using testing data.</div>-->
       <div ng-controller="timer" class="alert alert-secondary">
         <div ng-if="timing">
           Data reloading in {{ time }} second{{ plural }}.
         </div>
         <div ng-if="!timing">
-          Auto reloading paused.
+          Auto reloading paused on this page.
         </div>
       </div> <!-- Timer is loaded here -->
       <div ng-view></div> <!-- Views are loaded here -->
@@ -68,6 +71,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.9/angular.min.js" integrity="sha256-7ngBGhPctUEyXLD6ha53TFUaqhBCnXFOi712aqBq094=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.9/angular-route.min.js" integrity="sha256-MZn3qSbJC3ofkTSdXaHYrPr5etI6xij07/pAK6Ug228=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/angular-animate@1.6.9/angular-animate.min.js" integrity="sha256-R9+lzfWzgYztpoCcYVdGCr4RI1uX8CgGibodv/kI6xA=" crossorigin="anonymous"></script>
+    <!-- SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert@2.1.0/dist/sweetalert.min.js" integrity="sha256-FSEeC+c0OJh+0FI23EzpCWL3xGRSQnNkRGV2UF5maXs=" crossorigin="anonymous"></script>
     <!-- Loading bar Angular library -->
     <script src="lib/js/angular-loading-bar.min.js"></script>
     <!-- Google graph Angular library -->
@@ -77,6 +82,7 @@
     <!-- Main custom JS -->
     <script src="lib/js/sportsday.js"></script>
     <!-- Other JS libs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/popper.min.js" integrity="sha256-FCiJD1Xk+2itXYf5YdFQrPURijNogcXySEApUqeRwHc=" crossorigin="anonymous"></script>
