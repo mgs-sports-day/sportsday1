@@ -9,6 +9,8 @@
     <link href="lib/css/angular-loading-bar.min.css" rel="stylesheet">
     <!-- Cookie Consent 2 styles -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css">
+    <!-- Outdated browser CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css" integrity="sha256-KNfTksp/+PcmJJ0owdo8yBLi/SVMQrH/PNPm25nR/pI=" crossorigin="anonymous" />
     <!-- Custom styles -->
     <link href="lib/css/colours.css" rel="stylesheet">
     <!-- Favicon -->
@@ -55,13 +57,16 @@
     <div class="container">
       <!--<div class="alert alert-danger"><i class="fas fa-exclamation-triangle"></i> <strong>Warning!</strong> This site is currently using testing data.</div>-->
       <div ng-controller="timer" class="alert alert-secondary" id="sd-test-timer">
+        <!-- Outdated browser placeholder -->
+        <div id="outdated"></div>
+        <!-- Timing countdown, controlled in sportsday/l373 -->
         <div ng-if="timing">
           Data reloading in <span id="sd-test-timer-counter">{{ time }}</span> second{{ plural }}.
         </div>
         <div ng-if="!timing" class="sd-test-timerPaused">
           Auto reloading paused on this page.
         </div>
-      </div> <!-- Timer is loaded here -->
+      </div>
       <div ng-view></div> <!-- Views are loaded here -->
       <hr>
       <span class="text-muted">This website is part of a family of co-curricular sites run by students and staff of the Manchester Grammar School. The main school website is at <a href="http://mgs.org">mgs.org</a>.</span>
@@ -80,6 +85,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-google-chart/1.0.0-beta.1/ng-google-chart.min.js" integrity="sha256-Y0vhLYAXeGrITXe4k+Vq6DmIp+WM9C6wru60kIMh3O8=" crossorigin="anonymous"></script>
     <!-- Google analytics tracking library -->
     <script src="lib/js/angular-google-analytics.min.js"></script>
+    <!-- Outdated browser JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.js" integrity="sha256-yV0saZESxHBqfSfNncH044y3GHbsxLZJbQQmuxrXv90=" crossorigin="anonymous"></script>
     <!-- Main custom JS -->
     <script src="lib/js/sportsday.js"></script>
     <!-- Other JS libs -->
