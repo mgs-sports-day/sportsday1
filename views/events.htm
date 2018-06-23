@@ -1,0 +1,23 @@
+<nav>
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#!">Home</a></li>
+    <li class="breadcrumb-item active">Events</li>
+  </ol>
+</nav>
+
+<h3><i class="fas fa-trophy"></i> All events</h3>
+
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <th width="80%">Event name</th>
+      <th width="20%">View</th>
+    </thead>
+    <tbody>
+      <tr ng-repeat="event in events">
+        <td>{{ event.c[0].v }}</td>
+        <td><a ng-href="#!/a/{{ event.c[1].v }}" class="btn btn-outline-dark">View event</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

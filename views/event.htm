@@ -1,14 +1,14 @@
 <nav>
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="#!">Home</a></li>
-    <li class="breadcrumb-item"><a href="#!/activities">Activities</a></li>
-    <li class="breadcrumb-item active">{{ activityName }}</li>
+    <li class="breadcrumb-item"><a href="#!/events">Events</a></li>
+    <li class="breadcrumb-item active">{{ eventName }}</li>
   </ol>
 </nav>
 
-<h3>{{ activityName }}</h3>
+<h3>{{ eventName }}</h3>
 
-<p>This page shows forms in <strong>alphabetical</strong> order, for the event <strong>{{ activityName }}</strong>. <br>In each event, each form has three competitors, <strong>A</strong>, <strong>B</strong> and <strong>C</strong>. The names of these compeitors are shown, as well as <em>the position that competitor came against the other competitors of the same letter in the same year group</em>. Points are calculated per competitor, based on the number of points scored. These are shown for each competitor, as well as the total number of points scored by a form in the {{ activityName }}. <br> To view more information on mobile devices, please scroll to the left and right, over the table.</p>
+<p>This page shows forms in <strong>alphabetical</strong> order, for the event <strong>{{ eventName }}</strong>. <br>In each event, each form has three competitors, <strong>A</strong>, <strong>B</strong> and <strong>C</strong>. The names of these compeitors are shown, as well as <em>the position that competitor came against the other competitors of the same letter in the same year group</em>. Points are calculated per competitor, based on the number of points scored. These are shown for each competitor, as well as the total number of points scored by a form in the {{ eventName }}. <br> To view more information on mobile devices, please scroll to the left and right, over the table.</p>
 
 <ul class="nav mb-3 nav-tabs" role="tablist">
   <li class="nav-item">
@@ -31,11 +31,11 @@
 <div class="tab-content">
 
   <div class="tab-pane fade active show" id="aci-all" ng-init="yearGroup = 'all'">
-    <activity-table></activity-table>
+    <event-table></event-table>
   </div>
 
   <div ng-repeat="yearGroup in yearGroups" class="tab-pane fade" id="aci-{{ yearGroup }}">
-    <activity-table></activity-table>
+    <event-table></event-table>
   </div>
 
 </div> <!-- /tab content -->

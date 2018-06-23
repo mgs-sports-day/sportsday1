@@ -14,13 +14,13 @@
     <ul class="list-group">
       <a class="list-group-item list-group-item-action" ng-class="{active:insightID==1}" href="#!/i/1">Year groups - share of total points</a>
       <a class="list-group-item list-group-item-action" ng-class="{active:insightID==2}" href="#!/i/2">Forms - share of total points</a>
-      <a class="list-group-item list-group-item-action" ng-class="{active:insightID==3}" href="#!/i/3">Per Activity</a>
+      <a class="list-group-item list-group-item-action" ng-class="{active:insightID==3}" href="#!/i/3">Per event - share of total points</a>
     </ul>
   </div>
   <div class="col-lg">
     <div ng-if="insightID==3" class="mt-md-2 mb-2">
       <select ng-model="insight3Sport" ng-change="update(this)" class="form-control">
-        <option value="" disabled selected>Select an activity...</option>
+        <option value="" disabled selected>Select an event...</option>
         <option value="long_jump">Long Jump</option>
         <option value="high_jump">High Jump</option>
         <option value="shot">Shot</option>
