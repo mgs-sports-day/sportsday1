@@ -8,14 +8,15 @@
 
 <h3>{{ eventName }}</h3>
 
-<p>This page shows forms in <strong>alphabetical</strong> order, for the event <strong>{{ eventName }}</strong>. <br>In each event, each form has three competitors, <strong>A</strong>, <strong>B</strong> and <strong>C</strong>. The names of these compeitors are shown, as well as <em>the position that competitor came against the other competitors of the same letter in the same year group</em>. Points are calculated per competitor, based on the number of points scored. These are shown for each competitor, as well as the total number of points scored by a form in the {{ eventName }}. <br> To view more information on mobile devices, please scroll to the left and right, over the table.</p>
+<p ng-if="eventA">This page shows forms in <strong>rank</strong> order, for the event <strong>{{ eventName }}</strong>. <br>In this event, one sub-event takes place, <strong>A</strong>. Forms are allocated points based on their performance in each sub-event. The names of those who come in 1st, 2nd, and 3rd place are shown. <br> To view more information on mobile devices, please scroll to the left and right, over the table.</p>
+
+<p ng-if="eventAB">This page shows forms in <strong>rank</strong> order, for the event <strong>{{ eventName }}</strong>. <br>In this event, two sub-events take place, <strong>A</strong> and <strong>B</strong>. Forms are allocated points based on their performance in each sub-event. The names of those who come in 1st, 2nd, and 3rd place are shown. <br> To view more information on mobile devices, please scroll to the left and right, over the table.</p>
+
+<p ng-if="eventABC">This page shows forms in <strong>rank</strong> order, for the event <strong>{{ eventName }}</strong>. <br>In this event, three sub-events take place, <strong>A</strong>, <strong>B</strong> and <strong>C</strong>. Forms are allocated points based on their performance in each sub-event. The names of those who come in 1st, 2nd, and 3rd place are shown. <br> To view more information on mobile devices, please scroll to the left and right, over the table.</p>
 
 <ul class="nav mb-3 nav-tabs" role="tablist">
   <li class="nav-item">
-    <a class="nav-link active" data-toggle="tab" href="#aci-all" onClick="return false;">Whole school</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" data-toggle="tab" href="#aci-7" onClick="return false;">Year 7</a>
+    <a class="nav-link active" data-toggle="tab" href="#aci-7" onClick="return false;">Year 7</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" data-toggle="tab" href="#aci-8" onClick="return false;">Year 8</a>
@@ -30,12 +31,72 @@
 
 <div class="tab-content">
 
-  <div class="tab-pane fade active show" id="aci-all" ng-init="yearGroup = 'all'">
-    <event-table></event-table>
+  <div class="tab-pane fade active show" id="aci-all" ng-init="yearGroup = '7'">
+    <div ng-if="eventA">
+      <div ng-repeat="yearGroup in yearGroups" class="tab-pane fade" id="aci-{{ yearGroup }}">
+        <div class="col-md-12">
+          <event-table-a></event-table-a>
+        </div>
+      </div>
+    </div> <!-- eventA -->
+
+    <div ng-if="eventAB">
+      <div ng-repeat="yearGroup in yearGroups" class="tab-pane fade" id="aci-{{ yearGroup }}">
+        <div class="col-md-6">
+          <event-table-a></event-table-a>
+        </div>
+        <div class="col-md-6">
+          <event-table-b></event-table-b>
+        </div>
+      </div>
+    </div> <!-- eventAB -->
+
+    <div ng-if="eventABC">
+      <div ng-repeat="yearGroup in yearGroups" class="tab-pane fade" id="aci-{{ yearGroup }}">
+        <div class="col-md-4">
+          <event-table-a></event-table-a>
+        </div>
+        <div class="col-md-4">
+          <event-table-b></event-table-b>
+        </div>
+        <div class="col-md-4">
+          <event-table-c></event-table-c>
+        </div>
+      </div>
+    </div> <!-- eventABC -->
   </div>
 
-  <div ng-repeat="yearGroup in yearGroups" class="tab-pane fade" id="aci-{{ yearGroup }}">
-    <event-table></event-table>
-  </div>
+  <div ng-if="eventA">
+    <div ng-repeat="yearGroup in yearGroups" class="tab-pane fade" id="aci-{{ yearGroup }}">
+      <div class="col-md-12">
+        <event-table-a></event-table-a>
+      </div>
+    </div>
+  </div> <!-- eventA -->
+
+  <div ng-if="eventAB">
+    <div ng-repeat="yearGroup in yearGroups" class="tab-pane fade" id="aci-{{ yearGroup }}">
+      <div class="col-md-6">
+        <event-table-a></event-table-a>
+      </div>
+      <div class="col-md-6">
+        <event-table-b></event-table-b>
+      </div>
+    </div>
+  </div> <!-- eventAB -->
+
+  <div ng-if="eventABC">
+    <div ng-repeat="yearGroup in yearGroups" class="tab-pane fade" id="aci-{{ yearGroup }}">
+      <div class="col-md-4">
+        <event-table-a></event-table-a>
+      </div>
+      <div class="col-md-4">
+        <event-table-b></event-table-b>
+      </div>
+      <div class="col-md-4">
+        <event-table-c></event-table-c>
+      </div>
+    </div>
+  </div> <!-- eventABC -->
 
 </div> <!-- /tab content -->
