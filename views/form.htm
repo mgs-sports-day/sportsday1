@@ -25,15 +25,15 @@
       <table class="table table-striped">
         <tbody>
           <tr>
-            <td width="20%">Total points</td>
+            <td>Total points</td>
             <td><strong>{{ form[0].c[2].f }}</strong></td>
           </tr>
           <tr>
-            <td width="20%">School position</td>
+            <td>School position</td>
             <td ng-class="{'c-gold':form[0].c[4].f==1,'c-silver':form[0].c[4].f==2,'c-bronze':form[0].c[4].f==3}"><strong>{{ form[0].c[4].f }}</strong></td>
           </tr>
           <tr>
-            <td width="20%">Year position</td>
+            <td>Year position</td>
             <td ng-class="{'c-gold':form[0].c[3].f==1,'c-silver':form[0].c[3].f==2,'c-bronze':form[0].c[3].f==3}"><strong>{{ form[0].c[3].f }}</strong></td>
           </tr>
         </tbody>
@@ -47,34 +47,28 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th width="10%" rowspan="2">Event</th>
-            <th width="27%" colspan="2">Competitor A</th>
-            <th width="27%" colspan="2">Competitor B</th>
-            <th width="27%" colspan="2">Competitor C</th>
-            <th width="10%" rowspan="2">Points</th>
+            <th rowspan="2">Event</th>
+            <th colspan="2">Competitor A</th>
+            <th colspan="2">Competitor B</th>
+            <th colspan="2">Competitor C</th>
+            <th rowspan="2">Points</th>
           </tr>
           <tr>
-            <!--<th width="9%">Name</th>-->
-            <th width="9%">Position</th>
-            <th width="9%">Points</th>
-            <!--<th width="9%">Name</th>-->
-            <th width="9%">Position</th>
-            <th width="9%">Points</th>
-            <!--<th width="9%">Name</th>-->
-            <th width="9%">Position</th>
-            <th width="9%">Points</th>
+            <th>Position</th>
+            <th>Points</th>
+            <th>Position</th>
+            <th>Points</th>
+            <th>Position</th>
+            <th>Points</th>
           </tr>
         </thead>
         <tbody>
           <tr ng-repeat="event in formEvents">
-            <td><a ng-href="#!/a/{{ event.sem_name }}">{{ event.name }}</a></td>
-            <!-- <td>{{ event.aname }}</td> -->
+            <td><a ng-href="#!/e/{{ event.sem_name }}">{{ event.name }}</a></td>
             <td ng-class="{'c-gold':event.apos==1,'c-silver':event.apos==2,'c-bronze':event.apos==3}">{{ event.apos }}</td>
             <td>{{ event.apts }}</td>
-            <!-- <td>{{ event.bname }}</td> -->
             <td ng-class="{'c-gold':event.bpos==1,'c-silver':event.bpos==2,'c-bronze':event.bpos==3}">{{ event.bpos }}</td>
             <td>{{ event.bpts }}</td>
-            <!-- <td>{{ event.cname }}</td> -->
             <td ng-class="{'c-gold':event.cpos==1,'c-silver':event.cpos==2,'c-bronze':event.cpos==3}">{{ event.cpos }}</td>
             <td>{{ event.cpts }}</td>
             <td>{{ event.ptstotal }}</td>
