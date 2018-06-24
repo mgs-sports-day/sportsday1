@@ -30,7 +30,7 @@
 </ul>
 
 <div class="tab-content">
-  <div ng-repeat="yearGroup in yearGroups" class="tab-pane fade" id="aci-{{ yearGroup }}">
+  <div ng-repeat="yearGroup in yearGroups" class="tab-pane fade" ng-class="{'show active': yearGroup == '7'}" id="aci-{{ yearGroup }}">
     <div class="row" ng-if="eventA">
       <div class="col-sm">
         <event-table-a></event-table-a>
