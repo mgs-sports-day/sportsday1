@@ -30,73 +30,33 @@
 </ul>
 
 <div class="tab-content">
-
-  <div class="tab-pane fade active show" id="aci-all" ng-init="yearGroup = '7'">
-    <div ng-if="eventA">
-      <div ng-repeat="yearGroup in yearGroups" class="tab-pane fade" id="aci-{{ yearGroup }}">
-        <div class="col-md-12">
-          <event-table-a></event-table-a>
-        </div>
-      </div>
-    </div> <!-- eventA -->
-
-    <div ng-if="eventAB">
-      <div ng-repeat="yearGroup in yearGroups" class="tab-pane fade" id="aci-{{ yearGroup }}">
-        <div class="col-md-6">
-          <event-table-a></event-table-a>
-        </div>
-        <div class="col-md-6">
-          <event-table-b></event-table-b>
-        </div>
-      </div>
-    </div> <!-- eventAB -->
-
-    <div ng-if="eventABC">
-      <div ng-repeat="yearGroup in yearGroups" class="tab-pane fade" id="aci-{{ yearGroup }}">
-        <div class="col-md-4">
-          <event-table-a></event-table-a>
-        </div>
-        <div class="col-md-4">
-          <event-table-b></event-table-b>
-        </div>
-        <div class="col-md-4">
-          <event-table-c></event-table-c>
-        </div>
-      </div>
-    </div> <!-- eventABC -->
-  </div>
-
-  <div ng-if="eventA">
-    <div ng-repeat="yearGroup in yearGroups" class="tab-pane fade" id="aci-{{ yearGroup }}">
-      <div class="col-md-12">
+  <div ng-repeat="yearGroup in yearGroups" class="tab-pane fade" ng-class="{'show active': yearGroup == '7'}" id="aci-{{ yearGroup }}">
+    <div class="row" ng-if="eventA">
+      <div class="col-sm">
         <event-table-a></event-table-a>
       </div>
-    </div>
-  </div> <!-- eventA -->
+    </div><!-- eventA -->
 
-  <div ng-if="eventAB">
-    <div ng-repeat="yearGroup in yearGroups" class="tab-pane fade" id="aci-{{ yearGroup }}">
-      <div class="col-md-6">
+    <div class="row" ng-if="eventAB">
+      <div class="col-sm">
         <event-table-a></event-table-a>
       </div>
-      <div class="col-md-6">
+      <div class="col-sm">
         <event-table-b></event-table-b>
       </div>
-    </div>
-  </div> <!-- eventAB -->
+    </div><!-- eventAB -->
 
-  <div ng-if="eventABC">
-    <div ng-repeat="yearGroup in yearGroups" class="tab-pane fade" id="aci-{{ yearGroup }}">
-      <div class="col-md-4">
+    <div class="row" ng-if="eventABC">
+      <div class="col-sm">
         <event-table-a></event-table-a>
       </div>
-      <div class="col-md-4">
+      <div class="col-sm">
         <event-table-b></event-table-b>
       </div>
-      <div class="col-md-4">
+      <div class="col-sm">
         <event-table-c></event-table-c>
       </div>
-    </div>
-  </div> <!-- eventABC -->
+    </div><!-- eventABC -->
+  </div>
 
 </div> <!-- /tab content -->
