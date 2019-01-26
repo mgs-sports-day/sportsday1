@@ -13,7 +13,7 @@
     <link href="lib/css/colours.css" rel="stylesheet">
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
-    <title>MGS Sports Day 2018</title>
+    <title>MGS Sports Day 2019</title>
     <meta name="description" content="View results, events, and competitors for the Manchester Grammar School Senior Sports Day 2018 - all in real time!"/>
     <meta name="theme-color" content="#007bff"/>
   </head>
@@ -28,7 +28,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-3">
       <a class="navbar-brand" href="#!">
         <img src="lib/img/mgs_white_logo.svg" alt="MGS Logo vector" style="width:60px;">
-        Sports Day 2018
+        Sports Day 2019
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#n-content">
         <span class="navbar-toggler-icon"></span>
@@ -46,9 +46,6 @@
             <a href="#!/forms" class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show">Forms</a>
           </li>
           <li class="nav-item">
-            <a href="#!/newsfeed" class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show">Newsfeed</a>
-          </li>
-          <li class="nav-item">
             <a href="#!/insights" class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show">Insights</a>
           </li>
           <li class="nav-item">
@@ -59,7 +56,7 @@
     </nav>
 
     <div class="container">
-      <!--<div class="alert alert-danger"><i class="fas fa-exclamation-triangle"></i> <strong>Warning!</strong> This site is currently using testing data.</div>-->
+      <div class="alert alert-danger"><i class="fas fa-exclamation-triangle"></i> <strong>Warning!</strong> This site is currently using testing data.</div>
       <div ng-controller="timer" class="alert alert-secondary">
         <div ng-if="timing">
           Data reloading in {{ time }} second{{ plural }}.
