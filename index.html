@@ -1,20 +1,28 @@
+<!--
+MGS Sports Day Website
+https://github.com/tti0/sportsday
+https://mgssportsday.net
+-->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <!-- Responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Bootstrap styles -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <!-- Loading bar styles -->
     <link href="lib/css/angular-loading-bar.min.css" rel="stylesheet">
     <!-- Cookie Consent 2 styles -->
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css">
-    <!-- Custom styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" integrity="sha256-ebN46PPB/s45oUcqLn2SCrgOtYgVJaFiLZ26qVSqI8M=" crossorigin="anonymous" />
+    <!-- Custom styles for medal colours -->
     <link href="lib/css/colours.css" rel="stylesheet">
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <!-- Site metadata -->
     <title>MGS Sports Day 2019</title>
-    <meta name="description" content="View results, events, and competitors for the Manchester Grammar School Senior Sports Day 2018 - all in real time!"/>
+    <meta name="description" content="View results, scores, events, competitors and records for the Manchester Grammar School Senior Sports Day 2019 - all in real time!"/>
     <meta name="theme-color" content="#007bff"/>
   </head>
 
@@ -70,26 +78,28 @@
       <span class="text-muted">This website is part of a family of co-curricular sites run by students and staff of the Manchester Grammar School. The main school website is at <a href="http://mgs.org">mgs.org</a>.</span>
     </div>
 
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <!-- FontAwesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js" integrity="sha384-EIHISlAOj4zgYieurP0SdoiBYfGJKkgWedPHH4jCzpCXLmzVsw1ouK59MuUtP4a1" crossorigin="anonymous"></script>
     <!-- AngularJS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.9/angular.min.js" integrity="sha256-7ngBGhPctUEyXLD6ha53TFUaqhBCnXFOi712aqBq094=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.9/angular-route.min.js" integrity="sha256-MZn3qSbJC3ofkTSdXaHYrPr5etI6xij07/pAK6Ug228=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/angular-animate@1.6.9/angular-animate.min.js" integrity="sha256-R9+lzfWzgYztpoCcYVdGCr4RI1uX8CgGibodv/kI6xA=" crossorigin="anonymous"></script>
-    <!-- SweetAlert -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert@2.1.0/dist/sweetalert.min.js" integrity="sha256-FSEeC+c0OJh+0FI23EzpCWL3xGRSQnNkRGV2UF5maXs=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular.min.js" integrity="sha256-QRJz3b0/ZZC4ilKmBRRjY0MgnVhQ+RR1tpWLYaRRjSo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular-route.min.js" integrity="sha256-PQfkC+TI/HZv0O9JbmrLmPyhgOT2hry24vA5yAV59zY=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular-animate.min.js" integrity="sha256-7gObW8Wj9YEyJXg2gmZYzbmB8DWg9vnJlOCR9QZ/N50=" crossorigin="anonymous"></script>
     <!-- Loading bar Angular library -->
     <script src="lib/js/angular-loading-bar.min.js"></script>
     <!-- Google graph Angular library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-google-chart/1.0.0-beta.1/ng-google-chart.min.js" integrity="sha256-Y0vhLYAXeGrITXe4k+Vq6DmIp+WM9C6wru60kIMh3O8=" crossorigin="anonymous"></script>
     <!-- Google analytics tracking library -->
     <script src="lib/js/angular-google-analytics.min.js"></script>
+    <!-- SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert@2.1.0/dist/sweetalert.min.js" integrity="sha256-FSEeC+c0OJh+0FI23EzpCWL3xGRSQnNkRGV2UF5maXs=" crossorigin="anonymous"></script>
+    <!-- Cookie Consent JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular-animate.min.js" integrity="sha256-7gObW8Wj9YEyJXg2gmZYzbmB8DWg9vnJlOCR9QZ/N50=" crossorigin="anonymous"></script>
     <!-- Main custom JS -->
     <script src="lib/js/sportsday.js"></script>
-    <!-- Other JS libs -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/popper.min.js" integrity="sha256-FCiJD1Xk+2itXYf5YdFQrPURijNogcXySEApUqeRwHc=" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 
   </body>
 </html>
