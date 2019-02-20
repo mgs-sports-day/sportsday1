@@ -31,11 +31,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="score in topfive" ng-class="{'c-gold':score.c[3].f==1,'c-silver':score.c[3].f==2,'c-bronze':score.c[3].f==3}">
-            <td>{{ score.c[3].f }}</td>
-            <td>{{ score.c[0].v + score.c[1].v }}</td>
-            <td>{{ score.c[2].f }}</td>
-            <td><a ng-href="#!/f/{{ (score.c[0].v + score.c[1].v).replace('/','SLASH') }}" class="btn btn-outline-dark">View form</a></td>
+          <tr ng-repeat="i in topfive" ng-class="{'c-gold':i.schoolPos==1,'c-silver':i.schoolPos==2,'c-bronze':i.schoolPos==3}">
+            <td>{{ i.schoolPos }}</td>
+            <td>{{ i.year + i.form }}</td>
+            <td>{{ i.points }}</td>
+            <td><a ng-href="#!/f/{{ (i.year + i.form).replace('/','SLASH') }}" class="btn btn-outline-dark">View form</a></td>
           </tr>
         </tbody>
       </table>
@@ -54,11 +54,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="score in all" ng-class="{'c-gold':score.c[3].f==1,'c-silver':score.c[3].f==2,'c-bronze':score.c[3].f==3}">
-            <td>{{ score.c[3].f }}</td>
-            <td>{{ score.c[0].v + score.c[1].v }}</td>
-            <td>{{ score.c[2].f }}</td>
-            <td><a ng-href="#!/f/{{ (score.c[0].v + score.c[1].v).replace('/','SLASH') }}" class="btn btn-outline-dark">View form</a></td>
+          <tr ng-repeat="i in all" ng-class="{'c-gold':i.schoolPos==1,'c-silver':i.schoolPos==2,'c-bronze':i.schoolPos==3}">
+            <td>{{ i.schoolPos }}</td>
+            <td>{{ i.year + i.form }}</td>
+            <td>{{ i.points }}</td>
+            <td><a ng-href="#!/f/{{ (i.year + i.form).replace('/','SLASH') }}" class="btn btn-outline-dark">View form</a></td>
           </tr>
         </tbody>
       </table>

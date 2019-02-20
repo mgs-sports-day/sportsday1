@@ -101,6 +101,25 @@ https://mgssportsday.net
     <script src="https://cdn.jsdelivr.net/npm/sweetalert@2.1.0/dist/sweetalert.min.js" integrity="sha256-FSEeC+c0OJh+0FI23EzpCWL3xGRSQnNkRGV2UF5maXs=" crossorigin="anonymous"></script>
     <!-- Cookie Consent JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular-animate.min.js" integrity="sha256-7gObW8Wj9YEyJXg2gmZYzbmB8DWg9vnJlOCR9QZ/N50=" crossorigin="anonymous"></script>
+    <script>
+      window.addEventListener("load", function(){
+        window.cookieconsent.initialise({
+          "palette": {
+            "popup": {
+              "background": "#237afc"
+            },
+            "button": {
+              "background": "#fff",
+              "text": "#237afc"
+            }
+          },
+          "content": {
+            "message": "This website uses cookies for anonymous statistical purposes. By continuing to use this website, it is assumed that you agree to this.",
+            "dismiss": "I agree",
+            "href": "#!/about"
+          }
+      })});
+    </script>
     <!-- Main custom JS -->
     <script src="lib/js/sportsday.js"></script>
 
