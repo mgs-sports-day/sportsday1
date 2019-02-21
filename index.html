@@ -66,12 +66,12 @@ https://mgssportsday.net
     <div class="container">
       <div class="alert alert-danger"><i class="fas fa-exclamation-triangle"></i> <strong>Warning!</strong> This site is currently using testing data.</div>
       <div ng-controller="timer" class="alert alert-secondary">
-        <div ng-if="timing">
+        <span ng-if="timing">
           Data reloading in {{ time }} second{{ plural }}.
-        </div>
-        <div ng-if="!timing">
+        </span>
+        <span ng-if="!timing">
           Auto reloading paused on this page.
-        </div>
+        </span>
       </div> <!-- Timer is loaded here -->
       <div ng-view></div> <!-- Views are loaded here -->
       <hr>
