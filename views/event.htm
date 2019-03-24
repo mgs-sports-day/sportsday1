@@ -113,7 +113,7 @@
             </tr>
             <tr>
               <th></th>
-              <th>Standing record (set {{ record.standingYear }})</th>
+              <th>Standing record (set in {{ record.standingYear }})</th>
               <th>{{ record.currentYear }} record</th>
             </tr>
           </thead>
@@ -121,16 +121,16 @@
             <tr>
               <th>Score</th>
               <td>{{ record.standingScore }} {{ record.units }}</td>
-              <td>{{ record.currentScore }} {{ record.units }}</td>
+              <td><span ng-if="record.currentScore != ''">{{ record.currentScore }} {{ record.units }}</span></td>
             </tr>
             <tr>
               <th>Set by</th>
               <td>{{ record.standingHolder }}</td>
-              <td>{{ record.currentHolder }} (<a ng-href="#!/f/{{ record.currentForm.replace('/', 'SLASH') }}">{{ record.currentForm }}</a>)</td>
+              <td><span ng-if="record.currentScore != ''">{{ record.currentHolder }} (<a ng-href="#!/f/{{ year }}{{ record.currentForm.replace('/', 'SLASH') }}">{{ year }}{{ record.currentForm }}</a>)</span></td>
             </tr>
-            <tr>
+            <tr ng-class="{ 'table-success': record.doScore == 2 }">
               <th>Remarks</th>
-              <td colspan="2">None.</td>
+              <td colspan="2">{{ record.remarks }}</td>
             </tr>
           </tbody>
         </table>
