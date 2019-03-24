@@ -28,13 +28,79 @@
     <div class="row">
       <div class="col-sm">
         <!-- always show A -->
-        <event-table subevent="A"></event-table>
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th colspan="3">Event A</th>
+              </tr>
+              <tr>
+                <th>Position</th>
+                <th>Form</th>
+                <th>Points</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="i in tabA" ng-class="{ 'c-gold': i.pos == 1, 'c-silver': i.pos == 2, 'c-bronze': i.pos == 3 }">
+                <td><strong>{{ i.pos }}</strong></td>
+                <td>
+                    <a ng-href="#!/f/{{ year }}{{ i.letter.replace('/', 'SLASH') }}">{{ year }}{{ i.letter }}</a>
+                </td>
+                <td>{{ i.pts }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
       <div class="col-sm" ng-if="eventDetails.subs === 'b' || 'c'">
-        <event-table subevent="B"></event-table>
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th colspan="3">Event B</th>
+              </tr>
+              <tr>
+                <th>Position</th>
+                <th>Form</th>
+                <th>Points</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="i in tabB" ng-class="{ 'c-gold': i.pos == 1, 'c-silver': i.pos == 2, 'c-bronze': i.pos == 3 }">
+                <td><strong>{{ i.pos }}</strong></td>
+                <td>
+                    <a ng-href="#!/f/{{ year }}{{ i.letter.replace('/', 'SLASH') }}">{{ year }}{{ i.letter }}</a>
+                </td>
+                <td>{{ i.pts }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
       <div class="col-sm" ng-if="eventDetails.subs === 'c'">
-        <event-table subevent="C"></event-table>
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th colspan="3">Event C</th>
+              </tr>
+              <tr>
+                <th>Position</th>
+                <th>Form</th>
+                <th>Points</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="i in tabC" ng-class="{ 'c-gold': i.pos == 1, 'c-silver': i.pos == 2, 'c-bronze': i.pos == 3 }">
+                <td><strong>{{ i.pos }}</strong></td>
+                <td>
+                    <a ng-href="#!/f/{{ year }}{{ i.letter.replace('/', 'SLASH') }}">{{ year }}{{ i.letter }}</a>
+                </td>
+                <td>{{ i.pts }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
 
