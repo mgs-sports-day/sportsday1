@@ -44,7 +44,7 @@
               <tr ng-repeat="i in tabA" ng-class="{ 'c-gold': i.pos == 1, 'c-silver': i.pos == 2, 'c-bronze': i.pos == 3 }">
                 <td><strong>{{ i.pos }}</strong></td>
                 <td>
-                    <a ng-href="#!/f/{{ year }}{{ i.letter.replace('/', 'SLASH') }}">{{ year }}{{ i.letter }}</a>
+                    <a ng-href="#!/f/{{ year }}/{{ i.letter.replace('/', 'SLASH') }}">{{ year }}{{ i.letter }}</a>
                 </td>
                 <td>{{ i.pts }}</td>
               </tr>
@@ -69,7 +69,7 @@
               <tr ng-repeat="i in tabB" ng-class="{ 'c-gold': i.pos == 1, 'c-silver': i.pos == 2, 'c-bronze': i.pos == 3 }">
                 <td><strong>{{ i.pos }}</strong></td>
                 <td>
-                    <a ng-href="#!/f/{{ year }}{{ i.letter.replace('/', 'SLASH') }}">{{ year }}{{ i.letter }}</a>
+                    <a ng-href="#!/f/{{ year }}/{{ i.letter.replace('/', 'SLASH') }}">{{ year }}{{ i.letter }}</a>
                 </td>
                 <td>{{ i.pts }}</td>
               </tr>
@@ -94,7 +94,7 @@
               <tr ng-repeat="i in tabC" ng-class="{ 'c-gold': i.pos == 1, 'c-silver': i.pos == 2, 'c-bronze': i.pos == 3 }">
                 <td><strong>{{ i.pos }}</strong></td>
                 <td>
-                    <a ng-href="#!/f/{{ year }}{{ i.letter.replace('/', 'SLASH') }}">{{ year }}{{ i.letter }}</a>
+                    <a ng-href="#!/f/{{ year }}/{{ i.letter.replace('/', 'SLASH') }}">{{ year }}{{ i.letter }}</a>
                 </td>
                 <td>{{ i.pts }}</td>
               </tr>

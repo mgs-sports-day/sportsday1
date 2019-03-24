@@ -7,7 +7,7 @@
 <h1>Welcome to the MGS Sports Day 2019 website!</h1>
 
 <p>This page shows all forms, across the entire school in <strong>rank</strong> order. For more details, please visit the individual <a href="#!/forms">forms</a> and <a href="#!/events">events</a> pages.<br>On this page, forms are listed in rank order. Forms with 0 points are not ranked, and are listed in alphabetical order.</p>
-<p>Archives results for previous years may be viewed by clicking the following links: <a href="https://goo.gl/fp6pTK" target="_blank">2017</a> <a href="https://goo.gl/xp8VS6" target="_blank">2018</a>
+<p>Archived results for previous years may be viewed by clicking the following links: <a href="https://goo.gl/fp6pTK" target="_blank">2017</a> <a href="https://goo.gl/xp8VS6" target="_blank">2018</a>
 
 <ul class="nav mb-3 nav-tabs" role="tablist">
   <li class="nav-item">
@@ -35,7 +35,7 @@
             <td>{{ i.schoolPos }}</td>
             <td>{{ i.year + i.form }}</td>
             <td>{{ i.points }}</td>
-            <td><a ng-href="#!/f/{{ (i.year + i.form).replace('/','SLASH') }}" class="btn btn-outline-dark">View form</a></td>
+            <td><a ng-href="#!/f/{{ i.year }}/{{ i.form.replace('/','SLASH') }}" class="btn btn-outline-dark">View form</a></td>
           </tr>
         </tbody>
       </table>
@@ -58,7 +58,7 @@
             <td>{{ i.schoolPos }}</td>
             <td>{{ i.year + i.form }}</td>
             <td>{{ i.points }}</td>
-            <td><a ng-href="#!/f/{{ (i.year + i.form).replace('/','SLASH') }}" class="btn btn-outline-dark">View form</a></td>
+            <td><a ng-href="#!/f/{{ i.year }}/{{ i.form.replace('/','SLASH') }}" class="btn btn-outline-dark">View form</a></td>
           </tr>
         </tbody>
       </table>
