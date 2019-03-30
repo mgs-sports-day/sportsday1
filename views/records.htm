@@ -1,0 +1,89 @@
+<nav>
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#!">Home</a></li>
+    <li class="breadcrumb-item active">Records</li>
+  </ol>
+</nav>
+
+<h3><i class="fas fa-medal"></i> Records</h3>
+
+<p>As of 2018, record data has been collected for Sports Day. There are records for each year group, and each event, and, if the standing record is surpassed or equalled by this year's top competitor, bonus points are awarded to their form.</p>
+
+<div class="row">
+  <div class="col-sm">
+    <h4>Statistics</h4>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <th>Year group</th>
+          <th>Records equalled this year</th>
+          <th>New records set this year</th>
+        </thead>
+        <tbody>
+          <tr ng-repeat="i in stats">
+            <td>{{ i.year }}</td>
+            <td>{{ i.recordsEqualled }}</td>
+            <td>{{ i.recordsBroken }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<h4>Year group details</h4>
+
+<ul class="nav mb-3 nav-tabs" role="tablist">
+  <li ng-repeat="i in possYears" class="nav-item">
+    <a class="nav-link" data-toggle="tab" ng-href="#!/records/{{ i }}" ng-class="{ 'active': i == year }">Year {{ i }}</a>
+  </li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane fade show active">
+
+    <div class="row">
+      <div class="col-sm">
+        <p>This record information is for Year {{ year }}</strong>.</p>
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th rowspan="2">Event</th>
+                <th colspan="3">Standing record</th>
+                <th colspan="3">2019 record</th>
+                <th rowspan="2">Remarks</th>
+              </tr>
+              <tr>
+                <th>Result</th>
+                <th>Year set</th>
+                <th>Set by</th>
+                <th>Result</th>
+                <th>Year set</th>
+                <th>Set by</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="i in details">
+                <td><a ng-href="#!/e/{{ i.event }}/{{ year }}">{{ i.prettyEvent }}</a></td>
+                <td>{{ i.standingScore }} {{ i.units }}</td>
+                <td>{{ i.standingYear }}</td>
+                <td>{{ i.standingHolder }}</td>
+                <td><span ng-if="i.currentScore != ''">{{ i.currentScore }} {{ i.units }}</span></td>
+                <td><span ng-if="i.currentScore != ''">{{ i.currentYear }}</span></td>
+                <td><span ng-if="i.currentScore != ''">{{ i.currentHolder }} (<a ng-href="#!/f/{{ year }}/{{ i.currentForm.replace('/', 'SLASH') }}">{{ year + i.currentForm}}</a>)</span></td>
+                <td ng-class="{ 'table-success': i.doScore == 2, 'table-info': i.doScore == 1 }">
+                  {{ i.remark }}
+                  <span ng-if="i.doScore != 0">
+                    <br>Bonus points: {{ i.doScore }}
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
