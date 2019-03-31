@@ -2,80 +2,66 @@
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="#!">Home</a></li>
     <li class="breadcrumb-item"><a href="#!/forms">Forms</a></li>
-    <li class="breadcrumb-item active">{{ formName }}</li>
+    <li class="breadcrumb-item active">{{ matchingForm.year + matchingForm.form }}</li>
   </ol>
 </nav>
 
-<h3>{{ formName }}</h3>
+<h3>{{ matchingForm.year + matchingForm.form }}</h3>
 <p>To view more information on mobile devices, please scroll to the left and right, over the table.</p>
 
-<ul class="nav mb-3 nav-tabs" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" data-toggle="tab" href="#fmi-stats" onClick="return false;">Statistics</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" data-toggle="tab" href="#fmi-breakdown" onClick="return false;">Events breakdown</a>
-  </li>
-</ul>
+<h4>Statistics</h4>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <tbody>
+      <tr>
+        <td>Total points</td>
+        <td><strong>{{ stats.points }}</strong></td>
+      </tr>
+      <tr>
+        <td>School position</td>
+        <td ng-class="{'c-gold':stats.schoolPos==1,'c-silver':stats.schoolPos==2,'c-bronze':stats.schoolPos==3}"><strong>{{ stats.schoolPos }}</strong></td>
+      </tr>
+      <tr>
+        <td>Year position</td>
+        <td ng-class="{'c-gold':stats.yearPos==1,'c-silver':stats.yearPos==2,'c-bronze':stats.yearPos==3}"><strong>{{ stats.yearPos }}</strong></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-<div class="tab-content">
-  <div class="tab-pane fade show active" id="fmi-stats">
-    <h3>Statistics</h3>
-    <div class="table-responsive">
-      <table class="table table-striped">
-        <tbody>
-          <tr>
-            <td>Total points</td>
-            <td><strong>{{ form[0].c[2].f }}</strong></td>
-          </tr>
-          <tr>
-            <td>School position</td>
-            <td ng-class="{'c-gold':form[0].c[4].f==1,'c-silver':form[0].c[4].f==2,'c-bronze':form[0].c[4].f==3}"><strong>{{ form[0].c[4].f }}</strong></td>
-          </tr>
-          <tr>
-            <td>Year position</td>
-            <td ng-class="{'c-gold':form[0].c[3].f==1,'c-silver':form[0].c[3].f==2,'c-bronze':form[0].c[3].f==3}"><strong>{{ form[0].c[3].f }}</strong></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="tab-pane fade" id="fmi-breakdown">
-    <h3>Events breakdown</h3>
-    <div class="table-responsive">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th rowspan="2">Event</th>
-            <th colspan="2">Competitor A</th>
-            <th colspan="2">Competitor B</th>
-            <th colspan="2">Competitor C</th>
-            <th rowspan="2">Points</th>
-          </tr>
-          <tr>
-            <th>Position</th>
-            <th>Points</th>
-            <th>Position</th>
-            <th>Points</th>
-            <th>Position</th>
-            <th>Points</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat="event in formEvents">
-            <td><a ng-href="#!/e/{{ event.sem_name }}">{{ event.name }}</a></td>
-            <td ng-class="{'c-gold':event.apos==1,'c-silver':event.apos==2,'c-bronze':event.apos==3}">{{ event.apos }}</td>
-            <td>{{ event.apts }}</td>
-            <td ng-class="{'c-gold':event.bpos==1,'c-silver':event.bpos==2,'c-bronze':event.bpos==3}">{{ event.bpos }}</td>
-            <td>{{ event.bpts }}</td>
-            <td ng-class="{'c-gold':event.cpos==1,'c-silver':event.cpos==2,'c-bronze':event.cpos==3}">{{ event.cpos }}</td>
-            <td>{{ event.cpts }}</td>
-            <td>{{ event.ptstotal }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-</div> <!-- /tab content -->
+<h4>Events breakdown</h4>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th rowspan="2">Event</th>
+        <th colspan="2">Competitor A</th>
+        <th colspan="2">Competitor B</th>
+        <th colspan="2">Competitor C</th>
+        <th rowspan="2">Record bonus</th>
+        <th rowspan="2">Total points</th>
+      </tr>
+      <tr>
+        <th>Position</th>
+        <th>Points</th>
+        <th>Position</th>
+        <th>Points</th>
+        <th>Position</th>
+        <th>Points</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="i in results">
+        <td><a ng-href="#!/e/{{ i.eventDb }}">{{ i.eventPretty }}</a></td>
+        <td ng-class="{'c-gold':i.posA==1,'c-silver':i.posA==2,'c-bronze':i.posA==3}">{{ i.posA }}</td>
+        <td>{{ i.ptsA }}</td>
+        <td ng-class="{'c-gold':i.posB==1,'c-silver':i.posB==2,'c-bronze':i.posB==3}">{{ i.posB }}</td>
+        <td>{{ i.ptsB }}</td>
+        <td ng-class="{'c-gold':i.posC==1,'c-silver':i.posC==2,'c-bronze':i.posC==3}">{{ i.posC }}</td>
+        <td>{{ i.ptsC }}</td>
+        <td>{{ i.ptsRB }}</td>
+        <td>{{ i.ptsTOTAL }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

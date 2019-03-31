@@ -10,40 +10,119 @@
 <p>This website was developed to allow spectators of the Manchester Grammar School's annual Senior Sports Day to view results, events, and competitors in these events. It is a collaborative effort between the Computer Science and PE departments of the school, the staff responsible in each department being Mr D Millington and Mr T Grainger respectively. It is hoped that students, parents and staff will find this website beneficial. It works by fetching score and competitor data from a Google Drive spreadsheet, and displaying it in an easy-to-use and clear fashion.</p>
 
 <h3>How it works</h3>
-<p>This website is powered by AngularJS and Google Sheets. We query a Google Sheet with lots of live data in it every time a page is loaded, using an <code>XMLHttpRequest();</code>. (For the curious, the full, public Google Sheet is avaliable here: <a href="https://goo.gl/kut8PQ">https://goo.gl/kut8PQ</a>.) The Google Sheets API is somewhat difficult to work with, so some "de-Google-ification" needs to take place to the data returned. We then use various algorithms to compile the data into neatly laid-out tables, cross-referencing each other for easy navigation. The website is styled by Bootstrap. It's made to be as compact as possible so that it loads quickly on phones and doesn't use up 'too much data'. It's entirely responsive, and was tested mobile-first.</p>
+<p>This website is powered by AngularJS and Google Sheets. We query a Google Sheet with lots of live data in it every time a page is loaded, using an <code>XMLHttpRequest();</code>, using the Google Sheets API v4. All calculation of scores and results occurs in Google Sheets: not on the website. (For the curious, the full, public Google Sheet is avaliable here: <a href="https://goo.gl/gtfPtK">https://goo.gl/gtfPtK</a>.) We then use various algorithms to compile the data into neatly laid-out tables, cross-referencing each other for easy navigation. The website is styled by Bootstrap. It's made to be as compact as possible so that it loads quickly on phones and doesn't use up 'too much data'. It's entirely responsive, and was tested mobile-first.</p>
 
 <h3>Development Credits</h3>
-<p>This website was developed by Theodore Tucker, a student of the Manchester Grammar School, under the guidance of Mr D Millington, the Head of Computer Science. This project is open source, and source code is available at the GitHub repository here: <a href="https://github.com/tti0/sportsday">https://github.com/tti0/sportsday</a>. By using this site, you understand that it is licensed under the terms of the GNU General Public License v3.0 (<a href="https://www.gnu.org/licenses/gpl-3.0.txt">https://www.gnu.org/licenses/gpl-3.0.txt</a>), agree to these terms, and thus understand that NO WARRANTY WHATSOEVER is provided.</p>
+<p>This website was developed by Theodore Tucker and Pal Kerecsenyi, students of the Manchester Grammar School, under the guidance of Mr D Millington, the Head of Computer Science. This project is open source, and source code is available at the GitHub repository here: <a href="https://github.com/tti0/sportsday">https://github.com/tti0/sportsday</a>. By using this site, you understand that it is licensed under the terms of the GNU General Public License v3.0 (<a href="https://www.gnu.org/licenses/gpl-3.0.txt">https://www.gnu.org/licenses/gpl-3.0.txt</a>), agree to these terms, and thus understand that NO WARRANTY WHATSOEVER is provided.</p>
 <p>The development of this website would not be possible without the following open-source libraries and platforms: <br> <em>Libraries marked <code>*CDN*</code> in the list below are loaded from CDNs. All other site dependencies are loaded locally.</em></p>
-<ul>
-  <li>jQuery v3.3.1 <code>*CDN*</code> - JavaScript library for scripting simplification (<a href="https://jquery.com/">https://jquery.com/</a>).</li>
-  <li>AngularJS v1.6.9 <code>*CDN*</code> - Frontend web app framework (<a href="https://angularjs.org/">https://angularjs.org/</a>). The following AngularJS modules are used:</li>
-  <ul>
-    <li>ngRoute v.1.6.9 <code>*CDN*</code> - AngularJS module for loading different parts of the site, based on a user request (<a href="https://docs.angularjs.org/api/ngRoute">https://docs.angularjs.org/api/ngRoute</a>).</li>
-    <li>ngAnimate v.1.6.9 <code>*CDN*</code> - AngularJS module required for smooth loading bar animations (<a href="https://docs.angularjs.org/api/ngAnimate">https://docs.angularjs.org/api/ngAnimate</a>).</li>
-    <li>angular-loading-bar v0.9 - AngularJS module for nice loading bars on content requests (<a href="https://chieffancypants.github.io/angular-loading-bar/">https://chieffancypants.github.io/angular-loading-bar/</a>).</li>
-    <li>Google Chart Tools AngularJS directive module v1.0.0-beta.1 <code>*CDN*</code> - AngularJS module for chart generation on Insights page (<a href="http://angular-google-chart.github.io/angular-google-chart/">http://angular-google-chart.github.io/angular-google-chart/</a>).</li>
-    <li>Angular Google Analytics v1.1.8 - Google Analytics tracking integration module for AngularJS (<a href="https://github.com/revolunet/angular-google-analytics">https://github.com/revolunet/angular-google-analytics</a>).</li>
-  </ul>
-  <li>Boostrap v4.1 <code>*CDN*</code> - CSS framework (<a href="http://getbootstrap.com/">http://getbootstrap.com/</a>).</li>
-  <li>Popper.JS v1.14.3 <code>*CDN*</code> - JavaScript library for pop-up handling (<a href="https://popper.js.org/">https://popper.js.org/</a>).</li>
-  <li>SweetAlert v2.1.0 <code>*CDN*</code> - JavaScript library for pretty alerts (<a href="https://sweetalert.js.org/">https://sweetalert.js.org/</a>).</li>
-  <li>Cookie Consent 2 <code>*CDN*</code> - JavaScript and CSS library for handling cookie acceptantce (<a href="https://cookieconsent.insites.com">https://cookieconsent.insites.com</a>).</li>
-  <li>Google Visualization API Query Language - API to handle requests from the Google Sheet (<a href="https://developers.google.com/chart/interactive/docs/querylanguage">https://developers.google.com/chart/interactive/docs/querylanguage</a>).</li>
-  <li>FontAwesome v5.0 <code>*CDN*</code> - Free inline icons (<a href="https://fontawesome.com">https://fontawesome.com</a>).</li>
-  <li>Icons8 - Medal favicon (<a href="https://icons8.com">https://icons8.com</a>).</li>
-</ul>
-<p>Nor would development be possible without the excellent assistance of Pal Kerecsenyi (<a href="https://github.com/palkerecsenyi">https://github.com/palkerecsenyi</a>), also an MGS student, in debugging and testing AngularJS and JavaScript code.</p>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name of library</th>
+        <th>Website/repository link</th>
+        <th>License (linked)</th>
+        <th>Version used</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Bootstrap <code>*CDN*</code></td>
+        <td><a class="link" href="https://getbootstrap.com/">https://getbootstrap.com/</a></td>
+        <td><a class="link" href="https://raw.githubusercontent.com/twbs/bootstrap/v4-dev/LICENSE">MIT</a></td>
+        <td>4.2.1</td>
+        <td>CSS framework - handles all styling</td>
+      </tr>
+      <tr>
+        <td>FontAwesome (Free version) <code>*CDN*</code></td>
+        <td><a class="link" href="https://fontawesome.com/">https://fontawesome.com/</a></td>
+        <td><a class="link" href="lib/fontawesome-5.3.1/LICENSE.txt">FontAwesome Free License</a></td>
+        <td>5.6.3</td>
+        <td>In-line SVG and CSS icons</td>
+      </tr>
+      <tr>
+        <td>jQuery <code>*CDN*</code></td>
+        <td><a class="link" href="http://jquery.com/">http://jquery.com/</a></td>
+        <td><a class="link" href="https://raw.githubusercontent.com/jquery/jquery/master/LICENSE.txt">MIT</a></td>
+        <td>3.3.1</td>
+        <td>JavaScript library for simplifying DOM manipulation</td>
+      </tr>
+      <tr>
+        <td>Underscore.js <code>*CDN*</code></td>
+        <td><a class="link" href="http://underscorejs.org/">http://underscorejs.org/</a></td>
+        <td><a class="link" href="https://raw.githubusercontent.com/jashkenas/underscore/master/LICENSE">MIT</a></td>
+        <td>1.9.1</td>
+        <td>JavaScript library with helper functions for JSON manipulation</td>
+      </tr>
+      <tr>
+        <td>AngularJS <code>*CDN*</code></td>
+        <td><a class="link" href="https://angularjs.org/">https://angularjs.org/</a></td>
+        <td><a class="link" href="https://raw.githubusercontent.com/angular/angular.js/master/LICENSE">MIT</a></td>
+        <td>1.7.5</td>
+        <td>JavaScript framework for single-page (as in one main HTML file) sites (like this one), using the MVW paradigm</td>
+      </tr>
+      <tr>
+        <td>angular-route <code>*CDN*</code></td>
+        <td><a class="link" href="https://angularjs.org/">https://angularjs.org/</a></td>
+        <td><a class="link" href="https://raw.githubusercontent.com/angular/angular.js/master/LICENSE">MIT</a></td>
+        <td>1.7.5</td>
+        <td>A module for AngularJS to handle URL routes (distributed with the AngularJS main package)</td>
+      </tr>
+      <tr>
+        <td>angular-animate <code>*CDN*</code></td>
+        <td><a class="link" href="https://angularjs.org/">https://angularjs.org/</a></td>
+        <td><a class="link" href="https://raw.githubusercontent.com/angular/angular.js/master/LICENSE">MIT</a></td>
+        <td>1.7.5</td>
+        <td>A module for AngularJS to handle in-page animations (distributed with the AngularJS main package)</td>
+      </tr>
+      <tr>
+        <td>angular-loading-bar</td>
+        <td><a class="link" href="http://chieffancypants.github.io/angular-loading-bar">http://chieffancypants.github.io/angular-loading-bar</a></td>
+        <td><a class="link" href="https://raw.githubusercontent.com/chieffancypants/angular-loading-bar/master/LICENSE">MIT</a></td>
+        <td>0.9.0</td>
+        <td>A (3rd party) module for AngularJS to control the in-page loading bar, based on Angular interceptors</td>
+      </tr>
+      <tr>
+        <td>angular-google-analytics</td>
+        <td><a class="link" href="https://github.com/revolunet/angular-google-analytics">https://github.com/revolunet/angular-google-analytics</a></td>
+        <td><a class="link" href="https://raw.githubusercontent.com/revolunet/angular-google-analytics/master/LICENSE">MIT</a></td>
+        <td>1.1.8</td>
+        <td>A (3rd party) module for AngularJS to integrate Google Analytics tracking</td>
+      </tr>
+      <tr>
+        <td>SweetAlert</td>
+        <td><a class="link" href="https://sweetalert.js.org/">https://sweetalert.js.org/</a></td>
+        <td><a class="link" href="https://raw.githubusercontent.com/t4t5/sweetalert/master/LICENSE.md">MIT</a></td>
+        <td>2.1.0</td>
+        <td>JavaScript library to create pretty pop-up alerts</td>
+      </tr>
+      <tr>
+        <td>Cookie Consent 2</td>
+        <td><a class="link" href="https://cookieconsent.insites.com/">https://cookieconsent.insites.com/</a></td>
+        <td><a class="link" href="https://raw.githubusercontent.com/t4t5/sweetalert/master/LICENSE.md">MIT</a></td>
+        <td>3.1.0</td>
+        <td>JavaScript and CSS library to ensure EU law compliance with regards to consent when placing cookies</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>Medal favicon sourced from: <a href="https://icons8.com">https://icons8.com</a>.
+<p>The <a href="https://developers.google.com/sheets/api/">Google Sheets API v4</a> is used to load data from the Google Sheet.</p>
+
 <h3>Copyright</h3>
-<p>This work is copyright (&copy;) Theodore Tucker, 2018. It is licensed for re-use and modification under the terms of the GNU General Public License v3.0 (<a href="https://www.gnu.org/licenses/gpl-3.0.txt">https://www.gnu.org/licenses/gpl-3.0.txt</a>). The copyright of all images used on the site remains with the original photographer, or the Manchester Grammar School.</p>
+<p>This work is copyright (&copy;) Theodore Tucker and Pal Kerecsenyi, 2018-19. It is licensed for re-use and modification under the terms of the GNU General Public License v3.0 (<a href="https://www.gnu.org/licenses/gpl-3.0.txt">https://www.gnu.org/licenses/gpl-3.0.txt</a>). The copyright of all images used on the site remains with the original photographer, or the Manchester Grammar School.</p>
+
 <h3>Cookies</h3>
 <p>This site (excluding Google Analytics, see below) stores <strong>2</strong> cookies on your device. Cookies are small text files placed on your device - only you can view them. The cookies this site uses are:
-  <ul>
-    <li><code>stopSurveyAlert</code>: Used to determine if we should show you a message asking you to fill out a user experience survey. When you first visit the site, this cookie is set to <code>false</code>. If, in the "How are you finding the site?" dialog (which appears after you have visited 10 pages), you select either option, this cookie is set to <code>true</code>, so we know not to ask you about the survey again. This cookie is stored on your device for <strong>6 hours</strong> after the time it was set.</li>
-    <li><code>cookieconsent_status</code>: Used to determine if you have agreed to the cookie statment, so we do not show it to you again. This cookie is set to <code>dismiss</code> when you click "Got it!" on the cookie banner. This cookie is stored on your device for <strong>24 hours</strong> after the time it was set.</li>
-  </ul>
+<ul>
+  <li><code>stopSurveyAlert</code>: Used to determine if we should show you a message asking you to fill out a user experience survey. When you first visit the site, this cookie is set to <code>false</code>. If, in the "How are you finding the site?" dialog (which appears after you have visited 10 pages), you select either option, this cookie is set to <code>true</code>, so we know not to ask you about the survey again. This cookie is stored on your device for <strong>12 hours</strong> after the time it was set.</li>
+  <li><code>cookieconsent_status</code>: Used to determine if you have agreed to the cookie statment, so we do not show it to you again. This cookie is set to <code>dismiss</code> when you click "Got it!" on the cookie banner. This cookie is stored on your device for <strong>24 hours</strong> after the time it was set.</li>
+</ul>
+
 <h3>Privacy</h3>
 <p>This site uses the service Google Analytics to collect information about those who visit it. Google Analytics works by placing 'cookies' (small text files) on your device to identify you as a user to them. Your data is stored by Google's servers for 26 months from your most recent visit to the site. <strong>By using this site, it is assumed that you agree to this.</strong> We advise that all users read the Google Analytics Privacy and Cookie policy here: <a href="http://www.google.com/policies/privacy/partners/">http://www.google.com/policies/privacy/partners/</a>. If you do not want this information to be collected by us, please install the official Google Analytics opt-out extension here: <a href= "https://tools.google.com/dlpage/gaoptout">https://tools.google.com/dlpage/gaoptout</a>.</p>
+
 <h3>Contact</h3>
 <p>Please direct all enquiries to Mr Daniel Millington, Head of Computer Science at the Manchester Grammar School.<br>
 Email: <a href="mailto:d.e.millington@mgs.org">d.e.millington@mgs.org</a><br>
