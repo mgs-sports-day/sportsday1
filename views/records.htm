@@ -72,7 +72,7 @@
                 <td><span ng-if="i.currentScore != ''">{{ i.currentScore }} {{ i.units }}</span></td>
                 <td><span ng-if="i.currentScore != ''">{{ i.currentYear }}</span></td>
                 <td><span ng-if="i.currentScore != ''">{{ i.currentHolder }} (<a ng-href="#!/f/{{ year }}/{{ i.currentForm.replace('/', 'SLASH') }}">{{ year + i.currentForm}}</a>)</span></td>
-                <td ng-class="{ 'table-success': i.doScore == 2, 'table-info': i.doScore == 1 }">
+                <td ng-class="{ 'table-success': i.doScore == recordBonusValues.beat, 'table-info': i.doScore == recordBonusValues.equal }">
                   {{ i.remark }}
                   <span ng-if="i.doScore != 0">
                     <br>Bonus points: {{ i.doScore }}
