@@ -126,7 +126,7 @@
             <tr>
               <th>Set by</th>
               <td>{{ record.standingHolder }}</td>
-              <td><span ng-if="record.currentScore != ''">{{ record.currentHolder }} (<a ng-href="#!/f/{{ year }}{{ record.currentForm.replace('/', 'SLASH') }}">{{ year }}{{ record.currentForm }}</a>)</span></td>
+              <td><span ng-if="record.currentScore != ''">{{ record.currentHolder }} (<a ng-href="#!/f/{{ year }}/{{ record.currentForm.replace('/', 'SLASH') }}">{{ year }}{{ record.currentForm }}</a>)</span></td>
             </tr>
             <tr ng-class="{ 'table-success': record.doScore == recordBonusValues.beat }">
               <th>Remarks</th>
