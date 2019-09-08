@@ -1,4 +1,4 @@
-# MGS Sports Day 2019 :: Public Results Viewer (v1)
+# MGS Sports Day 2020 :: Public Results Viewer
 
 **Development version is avaliable at https://mgs-sports-day.github.io/sportsday1/.**
 
