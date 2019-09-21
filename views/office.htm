@@ -10,8 +10,80 @@
 <div class="alert alert-warning"><i class="fas fa-exclamation-triangle"></i> <strong>Warning!</strong> This page is intended for use only by Sports Day co-ordinators, although you cannot write data to the system here. <a href="#!" class="alert-link">Click here</a> to return home.</div>
 
 <h4>Data entry sheets generator</h4>
-<!--
-  1) Load and confirm forms/event data from SS
-  2) Generate CSV
-  3) Download template
--->
+<p>This tool can be used to help generate the paper result reporting forms, based on the forms and events stored in the spreadsheet.</p>
+
+<div class="card">
+  <div class="card-body">
+    <span id="step1">
+      <h5><i class="fas fa-cloud-download-alt"></i> Step 1: Load</h5>
+      <p>Click the button below to load the forms and events from the spreadsheet.</p>
+      <button type="button" class="btn btn-primary btn-block" ng-disabled="genStage!=1" ng-click="stage1end();">Load</button>
+    </span>
+    <hr>
+    <span id="step2">
+      <h5><i class="fas fa-check"></i> Step 2: Review</h5>
+      <p>Please review the following tables of events and forms, to ensure that they are correct. If any of the details need to be rectified, edit the spreadsheet.</p>
+      <p>N.B. Sub-event sheets will be generated up to and including the given letter. E.g. <code>b</code> will generate A and B.</p>
+      <span ng-if="genTables">
+        <div class="row">
+          <div class="col-sm-6">
+            <!-- Events -->
+            <p><strong>Events</strong> (Count: {{ thisEvents.length }})</p>
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <th>Event</th>
+                  <th>Track or field</th>
+                  <th>Sub-events</th>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="i in thisEvents">
+                    <td>{{ i.pretty }}</td>
+                    <td>{{ i.type }}</td>
+                    <td>{{ i.subs }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <!-- Forms -->
+            <p><strong>Forms</strong> (Count: {{ thisForms.length }})</p>
+            <p>Possible year groups: <span ng-repeat="i in thisYears">{{ i }}&nbsp;</span>
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <th>Year group</th>
+                  <th>Form</th>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="i in thisForms">
+                    <td>{{ i.year }}</td>
+                    <td>{{ i.form }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </span>
+      <button type="button" class="btn btn-primary btn-block" ng-disabled="genStage!=2" ng-click="stage2end();">Confirm</button>
+    </span>
+    <hr>
+    <span id="step3">
+      <h5><i class="fas fa-download"></i> Step 3: Download</h5>
+      <div class="row">
+        <div class="col-sm-6">
+          <h6>Track events</h6>
+          <button type="button" class="btn btn-primary btn-block" ng-disabled="genStage!=3" ng-click="stage3csv('Track');"><i class="fas fa-file-csv"></i> Download CSV</button>
+          <button type="button" class="btn btn-primary btn-block" ng-disabled="genStage!=3" onclick="location.href='lib/doc/reporting_track_template_2020.docx'"><i class="far fa-file-word"></i> Download MS Word template</button>
+        </div>
+        <div class="col-sm-6">
+          <h6>Field events</h6>
+          <button type="button" class="btn btn-primary btn-block" ng-disabled="genStage!=3" ng-click="stage3csv('Field');"><i class="fas fa-file-csv"></i> Download CSV</button>
+          <button type="button" class="btn btn-primary btn-block" ng-disabled="genStage!=3" onclick="location.href='lib/doc/reporting_field_template_2020.docx'"><i class="far fa-file-word"></i> Download MS Word template</button>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
