@@ -73,12 +73,17 @@
     <span id="step3">
       <h5><i class="fas fa-download"></i> Step 3: Download</h5>
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-4">
+          <h6>All events</h6>
+          <button type="button" class="btn btn-primary btn-block" ng-disabled="genStage!=3" ng-click="stage3pdf();"><i class="fas fa-file-pdf"></i> Download tracking PDF</button>
+          <button type="button" class="btn btn-secondary btn-block" ng-disabled="genStage!=3" ng-click="restart();"><i class="fas fa-redo-alt"></i> Re-start generation process</button>
+        </div>
+        <div class="col-sm-4">
           <h6>Track events</h6>
           <button type="button" class="btn btn-primary btn-block" ng-disabled="genStage!=3" ng-click="stage3csv('Track');"><i class="fas fa-file-csv"></i> Download CSV</button>
           <button type="button" class="btn btn-primary btn-block" ng-disabled="genStage!=3" onclick="location.href='lib/doc/reporting_track_template_2020.docx'"><i class="far fa-file-word"></i> Download MS Word template</button>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-4">
           <h6>Field events</h6>
           <button type="button" class="btn btn-primary btn-block" ng-disabled="genStage!=3" ng-click="stage3csv('Field');"><i class="fas fa-file-csv"></i> Download CSV</button>
           <button type="button" class="btn btn-primary btn-block" ng-disabled="genStage!=3" onclick="location.href='lib/doc/reporting_field_template_2020.docx'"><i class="far fa-file-word"></i> Download MS Word template</button>
@@ -87,3 +92,14 @@
     </span>
   </div>
 </div>
+
+<br>
+<h4>Helpful files</h4>
+<p>Download files which are useful in the administration of Sports Day scoring.</p>
+<ul>
+  <li><a href="lib/doc/timetable.pdf">Sports Day timetable</a></li>
+  <li><a href="lib/doc/final_results_decl.pdf">Final results declaration (for MoC)</a></li>
+  <li><a href="#">Offline results Excel spreadsheet</a></li>
+  <li><a href="#">Blank field reporting form</a></li>
+  <li><a href="#">Blank track reporting form</a></li>
+</ul>
