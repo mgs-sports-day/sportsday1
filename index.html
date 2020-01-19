@@ -67,7 +67,7 @@ https://mgs-sportsday.net
     </nav>
 
     <div class="container">
-      <div class="alert alert-warning"><i class="fas fa-exclamation-triangle"></i> <strong>Warning!</strong> This site is currently undergoing development, and is using testing data.</div>
+      <div ng-if="devMode" class="alert alert-warning"><i class="fas fa-exclamation-triangle"></i> <strong>Warning!</strong> This site is currently undergoing development, and is using testing data.</div>
       <div ng-controller="timer" class="alert alert-secondary">
         <span ng-if="timing">
           Data reloading in {{ time }} second{{ plural }}.
